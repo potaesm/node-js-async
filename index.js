@@ -36,10 +36,13 @@ function appendItemToArray(arr, item) {
 // Parallel looping
 async function parallelLooping(arr) {
     let newArray = [];
-    arr.forEach(async (item) => {
+    arr.forEach(async (item, index, array) => {
         newArray = await delay(3000, appendItemToArray, newArray, item);
         const file = await readFile('data.txt');
         console.log('file: ', file.substring(1, 3));
+        if (index == (array.length - 1)) {
+            console.log('loop done');
+        }
     });
     console.log('newArray: ', newArray);
     console.log('function done');
