@@ -40,7 +40,7 @@ async function parallelLooping(arr) {
         newArray = await delay(3000, appendItemToArray, newArray, item);
         const file = await readFile('data.txt');
         console.log('file: ', file.substring(1, 3));
-        if (index == (array.length - 1)) {
+        if (index === (array.length - 1)) {
             console.log('loop done');
         }
     });
@@ -55,7 +55,7 @@ async function sequentlyLoopingForOf(arr) {
         newArray = await delay(3000, appendItemToArray, newArray, item);
         const file = await readFile('data.txt');
         console.log('file: ', file.substring(1, 3));
-        if (arr.indexOf(item) == (arr.length - 1)) {
+        if (arr.indexOf(item) === (arr.length - 1)) {
             console.log('loop done');
         }
     }
@@ -70,7 +70,7 @@ async function sequentlyLoopingForIn(arr) {
         newArray = await delay(3000, appendItemToArray, newArray, arr[index]);
         const file = await readFile('data.txt');
         console.log('file: ', file.substring(1, 3));
-        if (index == (arr.length - 1)) {
+        if (index === (arr.length - 1)) {
             console.log('loop done');
         }
     }
@@ -85,7 +85,7 @@ async function sequentlyLoopingFor(arr) {
         newArray = await delay(3000, appendItemToArray, newArray, arr[index]);
         const file = await readFile('data.txt');
         console.log('file: ', file.substring(1, 3));
-        if (index == (arr.length - 1)) {
+        if (index === (arr.length - 1)) {
             console.log('loop done');
         }
     }
