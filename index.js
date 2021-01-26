@@ -93,6 +93,7 @@ async function sequentlyLoopingFor(arr) {
     console.log('function done');
 }
 
+// Sequently looping (old school while loop)
 async function sequentlyLoopingWhile(arr) {
     let newArray = [];
     let index = 0;
