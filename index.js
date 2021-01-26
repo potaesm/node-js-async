@@ -93,7 +93,24 @@ async function sequentlyLoopingFor(arr) {
     console.log('function done');
 }
 
+async function sequentlyLoopingWhile(arr) {
+    let newArray = [];
+    let index = 0;
+    while (index < arr.length) {
+        newArray = await delay(3000, appendItemToArray, newArray, arr[index]);
+        const file = await readFile('data.txt');
+        console.log('file: ', file.substring(1, 3));
+        if (index === (arr.length - 1)) {
+            console.log('loop done');
+        }
+        index++;
+    }
+    console.log('newArray: ', newArray);
+    console.log('function done');
+}
+
 // parallelLooping(arr);
 // sequentlyLoopingForOf(arr)
 // sequentlyLoopingForIn(arr)
 // sequentlyLoopingFor(arr);
+// sequentlyLoopingWhile(arr);
